@@ -1,29 +1,30 @@
-# Phi3-R
+# Gemma2B-R: Advanced Software Engineering Chat Interface
 
-Phi3-R (Phi-3 Reasoning) is an advanced AI chat application that leverages the power of the Phi-3 language model to provide intelligent, context-aware responses. This application offers a unique interface for engaging in high-level discourse with an AI assistant capable of complex reasoning and analysis.
+Gemma2B-R is a powerful GUI application that leverages the Gemma 2B AI model for advanced software engineering tasks. This interface allows users to engage in high-level technical discussions, receive code implementations, and benefit from AI-driven software engineering insights.
 
 ## Features
 
-- Interactive GUI for seamless conversation with the Phi-3 model
+- Interactive chat interface with Gemma 2B AI model
 - Real-time streaming of AI responses
-- Visualization of the AI's reasoning process
-- Clear chat functionality
-- Error handling and logging
-- Custom styling for an enhanced user experience
+- Syntax-highlighted code display in separate windows
+- Ability to save and copy generated code
+- Customizable themes and font sizes
+- Chat log saving functionality
+- Configurable via `config.ini` file
 
 ## Requirements
 
 - Python 3.7+
-- PyTorch
-- Transformers library
-- Phi-3 model
+- Tkinter (usually comes pre-installed with Python)
+- Requests library
+- Ollama with the Gemma 2B model
 
 ## Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/lalomorales22/Phi3-R.git
-   cd Phi3-R
+   git clone https://github.com/lalomorales22/Gemma2B-R.git
+   cd Gemma2B-R
    ```
 
 2. Install the required Python packages:
@@ -31,27 +32,42 @@ Phi3-R (Phi-3 Reasoning) is an advanced AI chat application that leverages the p
    pip install -r requirements.txt
    ```
 
-3. Download and set up the Phi-3 model (instructions may vary based on the specific implementation).
-
-## Usage
-
-1. Run the application:
+3. Ensure you have Ollama installed and the Gemma 2B model pulled:
    ```
-   python phi3_chat_app.py
+   ollama pull gemma2:2b
    ```
-
-2. Use the GUI to interact with the Phi-3 AI:
-   - Type your message in the input field and press Enter or click 'Send'
-   - View the AI's reasoning process and analysis in the response
-   - Clear the chat history using the 'Clear Chat' button (if available)
 
 ## Configuration
 
-The application may be pre-configured with certain settings. Check the code for any configurable parameters such as model paths or API endpoints.
+Before running the application, you can customize its behavior by editing the `config.ini` file:
+
+```ini
+[API]
+ollama_url = http://localhost:11434/api/generate
+
+[GUI]
+theme = clam
+font_size = 10
+```
+
+## Usage
+
+1. Start the Ollama server with the Gemma 2B model.
+
+2. Run the application:
+   ```
+   python gemmaR.py
+   ```
+
+3. Use the GUI to interact with Gemma 2B:
+   - Type your software engineering queries in the input field and press Enter or click 'Send'
+   - View the AI's thought process, analysis, and implementation in separate sections
+   - Access generated code in pop-up windows with options to copy or save the code
+   - Use the menu options to save chat logs, change themes, or adjust font sizes
 
 ## Contributing
 
-Contributions to Phi3-R are welcome! Please feel free to submit pull requests, create issues or spread the word.
+Contributions to Gemma2B-R are welcome! Please feel free to submit pull requests, create issues, or suggest improvements.
 
 ## License
 
@@ -59,6 +75,5 @@ Contributions to Phi3-R are welcome! Please feel free to submit pull requests, c
 
 ## Acknowledgements
 
-- Phi-3 model by Microsoft
-- Hugging Face Transformers library for model implementation
-
+- Gemma 2B model by Google
+- Ollama for providing local API access to large language models
